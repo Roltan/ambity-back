@@ -137,6 +137,9 @@ class task extends Controller
         }
     }
 
+
+
+    
     public function DelTask(Request $request){
         try{
             $imgs = ModelsTask::where('h1', $request->input('h1'))->first()->GetImg;

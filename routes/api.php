@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApplicationCotroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\task;
+use App\Http\Controllers\Task;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,13 @@ use App\Http\Controllers\task;
 */
 
 Route::post('/concept', [Controller::class, 'AddConcept']);
-Route::post('/task', [task::class, 'AddTask']);
-Route::post('/task_img', [task::class, 'AddIMGforTask']);
+Route::post('/task', [Task::class, 'AddTask']);
+Route::post('/task_img', [Task::class, 'AddIMGforTask']);
+Route::post('/application', [ApplicationCotroller::class, 'AddApplication']);
 
 Route::patch('/concept', [Controller::class, 'PatchConcept']);
-Route::patch('/task', [task::class, 'PatchTask']);
+Route::patch('/task', [Task::class, 'PatchTask']);
 
 Route::delete('/concept', [Controller::class, 'DelConcept']);
-Route::delete('/task', [task::class, 'DelTask']);
-Route::delete('/task_img', [task::class, 'DelIMG']);
+Route::delete('/task', [Task::class, 'DelTask']);
+Route::delete('/task_img', [Task::class, 'DelIMG']);

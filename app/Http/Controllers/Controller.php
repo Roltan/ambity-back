@@ -22,7 +22,6 @@ class Controller extends BaseController
     }
 
     public function AddConcept(Request $request){
-        $concept = new Concept;
         try{
             $concept = Concept::create([
                 'h1'=>$request->input('h1'),
@@ -35,7 +34,6 @@ class Controller extends BaseController
             return $e->getMessage();
         }
         
-
         return $concept;
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('img');
-            $table->string('h1');
+            $table->string('h1')->unique();
             $table->string('h2');
             $table->string('url');
             

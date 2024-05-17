@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('concepts', function (Blueprint $table) {
             $table->id();
 
-            $table->string('h1');
+            $table->string('h1')->unique();
             $table->string('h2');
             $table->string('h3');
             $table->string('url');
