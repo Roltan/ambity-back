@@ -19,3 +19,6 @@ use App\Http\Controllers\task;
 Route::post('/concept', [Controller::class, 'AddConcept']);
 Route::post('/task', [task::class, 'AddTask']);
 Route::post('/task_img', [task::class, 'AddIMGforTask']);
+
+Route::patch('/concept', [Controller::class, 'PatchConcept']);
+Route::patch('/task', [task::class, 'PatchTask']);
