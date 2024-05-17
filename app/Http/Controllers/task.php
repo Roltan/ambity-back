@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\TaskResource;
+use App\Http\Resources\TasksResource;
 use App\Models\Task as ModelsTask;
 use App\Models\Task_img;
 use Exception;
@@ -12,9 +13,13 @@ use Illuminate\Support\Facades\Storage;
 class task extends Controller
 {
     public function GetTasks(){
-        return TaskResource::collection(ModelsTask::with('GetImg')->get());
+        return TasksResource::collection(ModelsTask::all());
+    }
+    public function GetTask(int $id){
+        return new TaskResource(ModelsTask::when('GetImg')->find($id));
     }
 
+    
     public function AddTask(Request $request){
         try{
             $task = ModelsTask::create([
@@ -139,7 +144,7 @@ class task extends Controller
 
 
 
-    
+
     public function DelTask(Request $request){
         try{
             $imgs = ModelsTask::where('h1', $request->input('h1'))->first()->GetImg;
