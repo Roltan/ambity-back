@@ -10,7 +10,15 @@ use Illuminate\Http\Request;
 class task extends Controller
 {
     public function GetTasks(){
-        return ModelsTask::all();
+        $tasks = ModelsTask::all();
+        $response = [];
+        foreach ($tasks as $task){
+            $el = $task;
+            $el->images = $task->GetImg;
+            $response[] = $el;
+        }
+        
+        return $response;
     }
 
     public function AddTask(Request $request){

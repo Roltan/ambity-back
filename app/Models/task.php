@@ -31,8 +31,8 @@ class task extends Model
         'created_at', 'updated_at'
     ];
 
-    public function img(): task_img;
+    public function GetImg()
     {
-        return $this->task::class;
+        return $this->hasMany(task_img::class);
     }
 }
