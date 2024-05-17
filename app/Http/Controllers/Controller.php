@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\concept;
+use App\Models\Concept;
 use Exception;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -17,11 +17,11 @@ class Controller extends BaseController
 
     public function GetConcept()
     {
-        return concept::all();
+        return Concept::all();
     }
 
     public function AddConcept(Request $request){
-        $concept = new concept;
+        $concept = new Concept;
         try{
             $concept->h1 = $request->input('h1');
             $concept->h2 = $request->input('h2');

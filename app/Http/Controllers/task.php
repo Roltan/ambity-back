@@ -2,23 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\task as ModelsTask;
-use App\Models\task_img;
+use App\Http\Resources\TaskResource;
+use App\Models\Task as ModelsTask;
+use App\Models\Task_img;
 use Exception;
 use Illuminate\Http\Request;
 
 class task extends Controller
 {
     public function GetTasks(){
-        $tasks = ModelsTask::all();
-        $response = [];
-        foreach ($tasks as $task){
-            $el = $task;
-            $el->images = $task->GetImg;
-            $response[] = $el;
-        }
-        
-        return $response;
+        return TaskResource::collection(ModelsTask::with('GetImg')->get());
     }
 
     public function AddTask(Request $request){
