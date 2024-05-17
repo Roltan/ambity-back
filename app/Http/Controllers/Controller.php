@@ -78,4 +78,15 @@ class Controller extends BaseController
             return "изменениый не произошло";
         }
     }
+
+    public function DelConcept(Request $request){
+        try{
+            Concept::where('h1', $request->input('h1'))->first()->delete();
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
+
+        return 200;
+    }
 }

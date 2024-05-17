@@ -22,3 +22,7 @@ Route::post('/task_img', [task::class, 'AddIMGforTask']);
 
 Route::patch('/concept', [Controller::class, 'PatchConcept']);
 Route::patch('/task', [task::class, 'PatchTask']);
+
+Route::delete('/concept', [Controller::class, 'DelConcept']);
+Route::delete('/task', [task::class, 'DelTask']);
+Route::delete('/task_img', [task::class, 'DelIMG']);

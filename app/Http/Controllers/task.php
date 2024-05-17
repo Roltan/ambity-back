@@ -42,22 +42,6 @@ class task extends Controller
         return $task;
     }
 
-    public function AddIMGforTask(Request $request){
-        try{
-            $id = $request->input('task_id');
-            $file = Storage::putFile('media', $request->file('img'));
-            $task = Task_img::create([
-                'task_id' => $id,
-                'url' => $file
-            ]);
-        }
-        catch(Exception $e){
-            return $e->getMessage();
-        }
-
-        return $task;
-    }
-
     public function PatchTask(Request $request){
         try{
             $concept = ModelsTask::where('h1', $request->input('id'))->first();
@@ -151,5 +135,49 @@ class task extends Controller
         else{
             return "изменениый не произошло";
         }
+    }
+
+    public function DelTask(Request $request){
+        try{
+            $imgs = ModelsTask::where('h1', $request->input('h1'))->first()->GetImg;
+            foreach($imgs as $img){
+                Storage::delete($img->url);
+            }
+            ModelsTask::where('h1', $request->input('h1'))->first()->delete();
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
+
+        return 200;
+    }
+
+    public function AddIMGforTask(Request $request){
+        try{
+            $id = $request->input('task_id');
+            $file = Storage::putFile('media', $request->file('img'));
+            $task = Task_img::create([
+                'task_id' => $id,
+                'url' => $file
+            ]);
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
+
+        return $task;
+    }
+
+    public function DelIMG(Request $request){
+        try{
+            $url = $request->input('url');
+            Task_img::where('url', $url)->first()->delete();
+            Storage::delete($url);
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
+
+        return 200;
     }
 }
