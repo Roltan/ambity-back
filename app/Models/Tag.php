@@ -17,4 +17,8 @@ class Tag extends Model
     protected $hidden = [
         'created_at', 'updated_at'
     ];
+
+    public function GetBriefcaseHasTag() {
+        return $this->belongsToMany(Briefcase::class, 'BriefcasesTagCon');    
+    }
 }

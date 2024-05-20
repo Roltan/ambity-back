@@ -30,4 +30,8 @@ class Briefcase extends Model
     protected $hidden = [
         'created_at', 'updated_at'
     ];
+
+    public function GetTag() {
+        return $this->belongsToMany(Tag::class, 'BriefcasesTagCon');    
+    }
 }
