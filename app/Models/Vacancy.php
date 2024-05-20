@@ -9,7 +9,7 @@ class Vacancy extends Model
 {
     use HasFactory;
 
-    private $fillable = [
+    protected $fillable = [
         'vis',
         'name',
         'requirements',
@@ -17,4 +17,8 @@ class Vacancy extends Model
         'conditions',
     ];
     
+
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
 }
