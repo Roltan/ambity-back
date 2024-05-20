@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('concepts', function (Blueprint $table) {
+        Schema::create('conacts', function (Blueprint $table) {
             $table->id();
 
-            $table->string('h1')->unique();
-            $table->string('h2');
-            $table->string('h3');
-            $table->string('url');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('adres');
+            $table->string('telegram');
+            $table->string('vk');
 
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('concepts');
+        Schema::dropIfExists('conacts');
     }
 };

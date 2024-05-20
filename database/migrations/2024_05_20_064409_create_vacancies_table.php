@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task_imgs', function (Blueprint $table) {
+        Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('task_id')->constrained('tasks')->cascadeOnDelete();
-            $table->string('url')->unique();
+            $table->boolean('vis')->default(true);
+            
+            $table->string('name')->unique();
+            $table->text('requirements');
+            $table->text('duties');
+            $table->text('conditions');
 
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task_imgs');
+        Schema::dropIfExists('vacancies');
     }
 };

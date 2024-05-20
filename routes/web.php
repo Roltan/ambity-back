@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ApplicationCotroller;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,3 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/concept', [Controller::class, 'GetConcept']);
-Route::get('/task', [task::class, 'GetTasks']);
-Route::get('/task/{id}', [task::class, 'GetTask']);
-Route::get('/application', [ApplicationCotroller::class, 'GetApplication']);

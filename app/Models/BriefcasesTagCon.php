@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Concept extends Model
+class BriefcasesTagCon extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'h1', 'h2', 'h3', 'url'
+        'briefcase_id',
+        'tag_ig'
     ];
 
     protected $hidden = [

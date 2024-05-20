@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Task_img extends Model
+class ClientLogo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'task_id',
-        'url'
+        'name',
+        'image',
+        'vis',
     ];
 
     protected $hidden = [
