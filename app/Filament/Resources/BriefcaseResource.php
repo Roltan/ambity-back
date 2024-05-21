@@ -71,7 +71,7 @@ class BriefcaseResource extends Resource
 
                 Select::make('tag_id')
                     ->multiple()
-                    ->relationship('tag', 'name')
+                    ->relationship('tag')
                     ->options(Tag::where('vis', true)->get()->pluck('name', 'id')),
 
                 Checkbox::make('vis')

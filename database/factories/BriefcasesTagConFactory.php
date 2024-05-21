@@ -20,7 +20,7 @@ class BriefcasesTagConFactory extends Factory
     {
         return [
             'briefcase_id' => Briefcase::get()->random()->id,
-            'tag_ig' => Tag::get()->random()->id
+            'tag_id' => Tag::get()->random()->id
         ];
     }
 }
