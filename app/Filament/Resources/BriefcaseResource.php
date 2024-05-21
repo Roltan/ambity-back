@@ -5,9 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BriefcaseResource\Pages;
 use App\Filament\Resources\BriefcaseResource\RelationManagers;
 use App\Models\Briefcase;
+use App\Models\Tag;
 use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -24,6 +27,7 @@ use function GuzzleHttp\default_ca_bundle;
 
 class BriefcaseResource extends Resource
 {
+
     protected static ?string $model = Briefcase::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -64,6 +68,15 @@ class BriefcaseResource extends Resource
                     ->required(),
                 Textarea::make('seo_description'),
                 Textarea::make('og_description'),
+
+                // TagsInput::make('tag')
+                //     ->label('тэги')
+                //     ->suggestions(Tag::where('vis', true)->get()->pluck('name')),
+
+                Select::make('tag')
+                    ->multiple()
+                    ->relationship('tag', 'name')
+                    ->options(Tag::where('vis', true)->get()->pluck('name', 'id')),
 
                 Checkbox::make('vis')
                     ->label('отображать?')

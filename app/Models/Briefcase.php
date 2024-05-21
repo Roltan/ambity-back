@@ -31,7 +31,7 @@ class Briefcase extends Model
         'created_at', 'updated_at'
     ];
 
-    public function GetTag() {
-        return $this->belongsToMany(Tag::class, 'BriefcasesTagCon');    
+    public function tag() {
+        return $this->belongsToMany(Tag::class, 'briefcases_tag_cons');    
     }
 }
