@@ -20,7 +20,7 @@ class BriefcaseFactory extends Factory
             'img' => $this->faker->imageUrl(),
             'name' => $this->faker->sentence(3),
             'description' => $this->faker->text(),
-            'url' => $this->faker->url(),
+            'url' => $this->faker->word(),
             'video' => $this->faker->imageUrl(),
             'html' => $this->faker->text(),
             'seo_title' => $this->faker->word(),

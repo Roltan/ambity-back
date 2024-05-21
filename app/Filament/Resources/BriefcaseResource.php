@@ -69,10 +69,6 @@ class BriefcaseResource extends Resource
                 Textarea::make('seo_description'),
                 Textarea::make('og_description'),
 
-                // TagsInput::make('tag')
-                //     ->label('тэги')
-                //     ->suggestions(Tag::where('vis', true)->get()->pluck('name')),
-
                 Select::make('tag')
                     ->multiple()
                     ->relationship('tag', 'name')
