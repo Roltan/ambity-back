@@ -11,10 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Schema::create('briefcases_tag_cons', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('briefcase_id')->constrained('briefcases')->cascadeOnDelete();
+        //     $table->foreignId('tag_ig')->constrained('tags')->cascadeOnDelete();
+        //     $table->timestamps();
+        // });
         Schema::create('briefcases_tag_cons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('briefcase_id')->constrained('briefcases')->cascadeOnDelete();
-            $table->foreignId('tag_ig')->constrained('tags')->cascadeOnDelete();
+            $table->unsignedBigInteger('briefcase_id');
+            $table->unsignedBigInteger('tag_ig');
+
+            $table->foreign('briefcase_id')->references('id')->on('briefcases')->onDelete('cascade');
+            $table->foreign('tag_ig')->references('id')->on('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }

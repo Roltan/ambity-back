@@ -69,7 +69,7 @@ class BriefcaseResource extends Resource
                 Textarea::make('seo_description'),
                 Textarea::make('og_description'),
 
-                Select::make('tag')
+                Select::make('tag_id')
                     ->multiple()
                     ->relationship('tag', 'name')
                     ->options(Tag::where('vis', true)->get()->pluck('name', 'id')),
