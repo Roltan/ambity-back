@@ -22,9 +22,10 @@ class Controller extends BaseController
 
     public function GetCases() {
         $briefcase = Briefcase::where('vis', true)->get();
+        $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
 
-        return view('cases', ['briefcase'=>$briefcase, 'contact'=>$contact]);
+        return view('home', ['briefcase'=>$briefcase, 'client'=>$client, 'contact'=>$contact]);
     }
 
     public function GetCase($urlCase) {
@@ -32,13 +33,6 @@ class Controller extends BaseController
         $contact = Contact::first();
 
         return view('case', ['briefcase'=>$briefcase, 'contact'=>$contact]);
-    }
-
-    public function GetClient() {
-        $client = ClientLogo::where('vis', true)->get();
-        $contact = Contact::first();
-
-        return view('client', ['client'=>$client, 'contact'=>$contact]);
     }
 
     public function GetVacancy() {

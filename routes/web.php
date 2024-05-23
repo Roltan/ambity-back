@@ -19,4 +19,3 @@ Route::get('/', [Controller::class, 'GetCases']);
 Route::get('/client', [Controller::class, 'GetClient']);
 Route::get('/vacancy', [Controller::class, 'GetVacancy']);
 Route::get('/case/{urlCase}', [Controller::class, 'GetCase']);
-

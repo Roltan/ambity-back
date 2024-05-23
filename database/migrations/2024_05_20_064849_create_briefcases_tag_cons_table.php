@@ -17,15 +17,6 @@ return new class extends Migration
             $table->foreignId('tag_id')->constrained('tags')->cascadeOnDelete();
             $table->timestamps();
         });
-        // Schema::create('briefcases_tag_cons', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->unsignedBigInteger('briefcase_id');
-        //     $table->unsignedBigInteger('tag_id');
-
-        //     $table->foreign('briefcase_id')->references('id')->on('briefcases')->onDelete('cascade');
-        //     $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
-        //     $table->timestamps();
-        // });
     }
 
     /**
