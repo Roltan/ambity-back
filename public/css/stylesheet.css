@@ -1,0 +1,179 @@
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Light.eot');
+	src: local('RisingSun Light'), local('RisingSun-Light'),
+		url('RisingSun-Light.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-MediumItalic.eot');
+	src: local('RisingSun Medium Italic'), local('RisingSun-MediumItalic'),
+		url('RisingSun-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Thin.eot');
+	src: local('RisingSun Thin'), local('RisingSun-Thin'),
+		url('RisingSun-Thin.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-ExtraLightItalic.eot');
+	src: local('RisingSun ExtraLight Italic'), local('RisingSun-ExtraLightItalic'),
+		url('RisingSun-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-ExtraLightItalic.ttf') format('truetype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-BoldItalic.eot');
+	src: local('RisingSun Bold Italic'), local('RisingSun-BoldItalic'),
+		url('RisingSun-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-SemiBold.eot');
+	src: local('RisingSun SemiBold'), local('RisingSun-SemiBold'),
+		url('RisingSun-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-ExtraLight.eot');
+	src: local('RisingSun ExtraLight'), local('RisingSun-ExtraLight'),
+		url('RisingSun-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-ExtraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-ExtraBoldItalic.eot');
+	src: local('RisingSun ExtraBold Italic'), local('RisingSun-ExtraBoldItalic'),
+		url('RisingSun-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-ExtraBoldItalic.ttf') format('truetype');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Italic.eot');
+	src: local('RisingSun Italic'), local('RisingSun-Italic'),
+		url('RisingSun-Italic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Bold.eot');
+	src: local('RisingSun Bold'), local('RisingSun-Bold'),
+		url('RisingSun-Bold.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-LightItalic.eot');
+	src: local('RisingSun Light Italic'), local('RisingSun-LightItalic'),
+		url('RisingSun-LightItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-BlackItalic.eot');
+	src: local('RisingSun Black Italic'), local('RisingSun-BlackItalic'),
+		url('RisingSun-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-SemiBoldItalic.eot');
+	src: local('RisingSun SemiBold Italic'), local('RisingSun-SemiBoldItalic'),
+		url('RisingSun-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-SemiBoldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Regular.eot');
+	src: local('RisingSun Regular'), local('RisingSun-Regular'),
+		url('RisingSun-Regular.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Medium.eot');
+	src: local('RisingSun Medium'), local('RisingSun-Medium'),
+		url('RisingSun-Medium.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-ExtraBold.eot');
+	src: local('RisingSun ExtraBold'), local('RisingSun-ExtraBold'),
+		url('RisingSun-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-Black.eot');
+	src: local('RisingSun Black'), local('RisingSun-Black'),
+		url('RisingSun-Black.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RisingSun';
+	src: url('RisingSun-ThinItalic.eot');
+	src: local('RisingSun Thin Italic'), local('RisingSun-ThinItalic'),
+		url('RisingSun-ThinItalic.eot?#iefix') format('embedded-opentype'),
+		url('RisingSun-ThinItalic.ttf') format('truetype');
+	font-weight: 100;
+	font-style: italic;
+}

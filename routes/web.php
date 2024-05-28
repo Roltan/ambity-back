@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'GetCases']);
+Route::get('/', [Controller::class, 'GetIndex']);
+Route::get('/cases', [Controller::class, 'GetCases']);
 Route::get('/client', [Controller::class, 'GetClient']);
 Route::get('/vacancy', [Controller::class, 'GetVacancy']);
 Route::get('/case/{urlCase}', [Controller::class, 'GetCase']);
+Route::get('/services/{services}', [Controller::class, 'GetServices']);

@@ -20,12 +20,19 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function GetCases() {
+    public function GetIndex() {
         $briefcase = Briefcase::where('vis', true)->get();
         $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
 
-        return view('home', ['briefcase'=>$briefcase, 'client'=>$client, 'contact'=>$contact]);
+        return view('index', ['briefcase'=>[$briefcase[0], $briefcase[1]], 'client'=>$client, 'contact'=>$contact]);
+    }
+
+    public function GetCases() {
+        $briefcase = Briefcase::where('vis', true)->get();
+        $contact = Contact::first();
+
+        return view('cases', ['briefcase'=>[$briefcase[0], $briefcase[1]], 'contact'=>$contact]);
     }
 
     public function GetCase($urlCase) {
@@ -46,5 +53,10 @@ class Controller extends BaseController
         }
 
         return view('vacancy', ['vacancy'=>$vacancy, 'contact'=>$contact]);
+    }
+
+    public function GetServices($service){
+        $contact = Contact::first();
+        return view($service, ['contact'=>$contact]);
     }
 }

@@ -1,4 +1,4 @@
-@extends('main')
+@extends('desktop')
 
 @section('title')
     {{$briefcase->seo_title}}
@@ -15,8 +15,8 @@
 @endsection
 
 @section('mainContent')
-    <h1>{{$briefcase->name}}</h1>
+    {{-- <h1>{{$briefcase->name}}</h1>
     <img src="{{$briefcase->img}}" alt="">
-    <p>{{$briefcase->description}}</p>
-    {{$briefcase->html}}
+    <p>{{$briefcase->descriptio n}}</p>
+    {{$briefcase->html}} --}}
 @endsection
