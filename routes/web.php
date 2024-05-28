@@ -20,4 +20,7 @@ Route::get('/cases', [Controller::class, 'GetCases']);
 Route::get('/client', [Controller::class, 'GetClient']);
 Route::get('/vacancy', [Controller::class, 'GetVacancy']);
 Route::get('/case/{urlCase}', [Controller::class, 'GetCase']);
-Route::get('/services/{services}', [Controller::class, 'GetServices']);
+Route::get('/services/{service}', [Controller::class, 'GetService']);
+Route::get('/services', [Controller::class, 'GetServices']);
+Route::get('/career', [Controller::class, 'GetCareer']);
+Route::get('/contacts', [Controller::class, 'GetContacts']);

@@ -55,8 +55,22 @@ class Controller extends BaseController
         return view('vacancy', ['vacancy'=>$vacancy, 'contact'=>$contact]);
     }
 
-    public function GetServices($service){
+    public function GetService($service){
         $contact = Contact::first();
         return view($service, ['contact'=>$contact]);
+    }
+
+    public function GetServices(){
+        $contact = Contact::first();
+        return view('services', ['contact'=>$contact]);
+    }
+
+    public function GetCareer(){
+        $contact = Contact::first();
+        return view('career', ['contact'=>$contact]);
+    }
+    public function GetContacts(){
+        $contact = Contact::first();
+        return view('contacts', ['contact'=>$contact]);
     }
 }
