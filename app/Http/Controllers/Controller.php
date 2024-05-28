@@ -73,4 +73,19 @@ class Controller extends BaseController
         $contact = Contact::first();
         return view('contacts', ['contact'=>$contact]);
     }
+
+    public function GetAgency(){
+        $contact = Contact::first();
+        return view('agency', ['contact'=>$contact]);
+    }
+
+    public function GetProducts(){
+        $contact = Contact::first();
+        return view('products', ['contact'=>$contact]);
+    }
+
+    public function GetBlog(){
+        $contact = Contact::first();
+        return view('blog', ['contact'=>$contact]);
+    }
 }
