@@ -83,7 +83,7 @@ ambity
     </div>
     <div class="slider-marquee">
         <div>
-            <div class="slider_item" style="--target: -271.7375183105469px;"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
+            {{-- <div class="slider_item" style="--target: -271.7375183105469px;"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
                 <h2>Тренд</h2>
                 <p>Ресторанная группа</p>
             </div>
@@ -106,10 +106,18 @@ ambity
             <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
                 <h2>Тренд</h2>
                 <p>Ресторанная группа</p>
-            </div>
+            </div> --}}
+            @foreach ($client as $el)
+                <div class="slider_item"><img src="{{$el->image}}" />
+                    <div class="slider_item-text">
+                        <h2>{{$el->name}}</h2>
+                        <p>{{$el->name}}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div>
-            <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
+            {{-- <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
                 <h2>Тренд</h2>
                 <p>Ресторанная группа</p>
             </div>
@@ -132,7 +140,15 @@ ambity
             <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png">
                 <h2>Тренд</h2>
                 <p>Ресторанная группа</p>
-            </div>
+            </div> --}}
+            @foreach ($client as $el)
+                <div class="slider_item"><img src="{{$el->image}}" />
+                    <div class="slider_item-text">
+                        <h2>{{$el->name}}</h2>
+                        <p>{{$el->name}}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

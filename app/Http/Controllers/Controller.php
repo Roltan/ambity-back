@@ -75,8 +75,9 @@ class Controller extends BaseController
     }
 
     public function GetAgency(){
+        $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
-        return view('agency', ['contact'=>$contact]);
+        return view('agency', ['contact'=>$contact, 'client'=>$client]);
     }
 
     public function GetProducts(){
