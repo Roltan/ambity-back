@@ -181,7 +181,7 @@
                     <button class="btn-white" onclick="document.querySelector('.modal').style.top='0';">Обсудить проект</button>
                 </div>
                 <div class="footer-cont d-flex flex-column">
-                    <a class="footer-cont-href d-flex txt-anim" href="tel:+7{{$contact->phone}}"><p>+7 {{$contact->phone}}</p><span>+7 {{$contact->phone}}</span></a>
+                    <a class="footer-cont-href d-flex txt-anim" href="tel:{{$contact->phone}}"><p>{{$contact->phone}}</p><span>+7 {{$contact->phone}}</span></a>
                     <a class="footer-cont-href d-flex txt-anim" href="mailto:{{$contact->email}}"><p>{{$contact->email}}</p><span>{{$contact->email}}</span></a>
                     <p>{{$contact->adres}}</p>
                     <div class="footer-cont-soc">
