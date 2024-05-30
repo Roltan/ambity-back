@@ -2248,28 +2248,6 @@ h2 {
     height: calc((100vh - 55px) * 0.5);
     min-height: 200px;
 }
-
-/*.c-portfolio-page__item {*/
-/*overflow: hidden;*/
-/*height: calc((100vh - 55px) * 0.32);*/
-/*min-height: 150px;*/
-/*}*/
-/*@media (max-width: 1439px) {*/
-/*.c-portfolio-page__item {*/
-/*height: calc((100vh - 55px) * 0.5);*/
-/*min-height: 200px;*/
-/*}*/
-/*}*/
-/*@media (max-width: 979px) {*/
-/*.c-portfolio-page__item {*/
-/*height: 300px;*/
-/*}*/
-/*}*/
-/*@media (max-width: 559px) {*/
-/*.c-portfolio-page__item {*/
-/*height: 200px;*/
-/*}*/
-/*}*/
 @media (min-width: 1440px) {
     .c-portfolio-page__item.item-xxl-3 {
         -webkit-box-flex: 0;

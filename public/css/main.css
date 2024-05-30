@@ -367,10 +367,10 @@ footer .mastercard {
 }
 .slider_box .slick-next {
     right: 25px;
-    background: url("/assets/img/right-chevron.svg") right;
+    background: url("/media/right-chevron.svg") right;
 }
 .slider_box .slick-prev {
-    background: url("/assets/img/left-chevron.svg") left;
+    background: url("/media/left-chevron.svg") left;
 }
 .slider_box .slick-dots {
     display: flex;

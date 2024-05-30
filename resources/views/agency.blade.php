@@ -214,4 +214,154 @@ ambity
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        [...document.querySelectorAll('.cases .cases-row')].forEach(item=>{
+            [...item.querySelectorAll('.cases-row-el .cases-row-el_cont div')].forEach(divs=>{
+                divs.onmouseenter=(e)=>{
+                    if(item.querySelector('.cases-row-el:last-of-type .cases-row-el_cont div') === divs){
+                        document.querySelector('.cases .cases-marquee').style.top='calc(55% - 156px)';
+                    }else{
+                        document.querySelector('.cases .cases-marquee').style.top=null;
+                    }
+                    [...document.querySelectorAll('.cases-row-el_addition')].forEach(addition=>{
+                        addition.style.opacity='0';
+                    })
+                    document.querySelector(`[for-case="${divs.getAttribute('case')}"]`).style.opacity='1';
+                    divs.onmousemove=(ev)=>{
+                        let rect = divs.getBoundingClientRect();
+                        divs.style.transform=`translate(${0.1*(ev.offsetX-Math.floor(rect.width)/2)}px , ${0.1*(Math.floor((rect.width)/2)/(Math.floor(rect.height)/2))*(ev.offsetY-Math.floor(rect.height)/2)}px)`;
+                    }
+                    [...e.currentTarget.parentNode.querySelectorAll('h3, p')].forEach(childs=>{
+                        childs.style.opacity='0';
+                    });
+                    if(e.currentTarget===item.querySelector('.cases-row-el:first-of-type .cases-row-el_cont div')){
+                        item.querySelector('.cases-row-el:last-of-type .cases-row-el_cont').classList.add('active');
+                        item.querySelector('.cases-row-el:last-of-type .cases-row-el_addition').classList.add('active');
+                        [...document.querySelectorAll('.cases .cases-marquee p')].forEach(text=>{
+                            text.innerText=e.currentTarget.parentNode.querySelector('h3').innerText;
+                        });
+                        document.querySelector('.cases .cases-marquee div').style.setProperty('--target','-'+document.querySelector('.cases .cases-marquee div>p').getBoundingClientRect().width+'px');
+                        document.querySelector('.cases .cases-marquee').style.opacity='1';
+                    }
+                    if(e.currentTarget===item.querySelector('.cases-row-el:last-of-type .cases-row-el_cont div')){
+                        item.querySelector('.cases-row-el:first-of-type .cases-row-el_cont').classList.add('active');
+                        item.querySelector('.cases-row-el:first-of-type .cases-row-el_addition').classList.add('active');
+                        // document.querySelector('.cases .cases-marquee div').style.width=document.querySelector('.cases .cases-marquee').offsetWidth+'px';
+                        [...document.querySelectorAll('.cases .cases-marquee p')].forEach(text=>{
+                            text.innerText=e.currentTarget.parentNode.querySelector('h3').innerText;
+                        });
+                        document.querySelector('.cases .cases-marquee div').style.setProperty('--target','-'+document.querySelector('.cases .cases-marquee div>p').getBoundingClientRect().width+'px');
+
+                      //  document.querySelector('.slider .slider-marquee div').style.setProperty('--target','-'+document.querySelector('.slider .slider-marquee div>.slider_item').getBoundingClientRect().width+'px');
+
+                        document.querySelector('.cases .cases-marquee').style.opacity='1';
+                    }
+                }
+                divs.onmouseleave=(e)=>{
+                    divs.onmousemove=false;
+                    divs.style.transform='translate(0, 0)';
+                    [...document.querySelectorAll('.cases-row-el_addition')].forEach(addition=>{
+                        addition.style.opacity='0';
+                    });
+                    [...e.currentTarget.parentNode.querySelectorAll('h3, p')].forEach(childs=>{
+                        childs.style.opacity='1';
+                    });
+                    if(e.currentTarget===item.querySelector('.cases-row-el:first-of-type .cases-row-el_cont div')){
+                        item.querySelector('.cases-row-el:last-of-type .cases-row-el_cont').classList.remove('active');
+                        item.querySelector('.cases-row-el:last-of-type .cases-row-el_addition').classList.remove('active');
+                    }
+                    if(e.currentTarget===item.querySelector('.cases-row-el:last-of-type .cases-row-el_cont div')){
+                        item.querySelector('.cases-row-el:first-of-type .cases-row-el_cont').classList.remove('active');
+                        item.querySelector('.cases-row-el:first-of-type .cases-row-el_addition').classList.remove('active');
+                    }
+                    document.querySelector('.cases .cases-marquee').style.opacity='0';
+                }
+            })
+        })
+    })
+</script>
+<script>
+    //подсчет
+    const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
+        const target = document.querySelector(qSelector);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            target.innerText = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+    //задержка
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    // функция определяет нахождение элемента в области видимости
+    // если элемент видно - возвращает true
+    // если элемент невидно - возвращает false
+    function isOnVisibleSpace(element) {
+        let windowHeight = window.innerHeight;
+        let elemRect = element.getBoundingClientRect();
+        let offset   = elemRect.top;// - bodyRect.top;
+        if ((offset<0) || (offset>windowHeight) )
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+    // глобальный объект с элементами, для которых отслеживаем их положение в зоне видимости
+    var listenedElements = [];
+    // обработчик события прокрутки экрана. Проверяет все элементы добавленные в listenedElements
+    // на предмет попадания в зону видимости
+    window.onscroll = function() {
+        listenedElements.forEach(item=>{
+            // если элемент находился вне зоны видимости и вошел в нее
+            // вызываем обработчик попадания в зону видимости
+            if(!item.el.isOnVisibleSpace && isOnVisibleSpace(item.el))
+            {
+                item.el.isOnVisibleSpace = true;
+                item.inVisibleSpace(item.el);
+                return;
+            }
+        });
+    }
+
+    // функция устанавливает обработчики событий
+    // появления элемента в зоне видимости и
+    // выхода из нее
+    function onVisibleSpaceListener(element, cbIn) {
+        // получаем ссылку на объект элемента
+        let el = document.querySelector(element);
+        // добавляем элемент и обработчики событий
+        // в массив отслеживаемых элементов
+        listenedElements.push({
+            el: el,
+            inVisibleSpace: cbIn
+        });
+    }
+    // функция запуска анимации(подсчета)
+    function count(ms) {
+        counterAnim("#count1", 0, 200, ms);
+        delay(ms + 100).then(() => {
+            document.querySelector("#sign").style.display = 'inline';
+        });
+        counterAnim("#count2", 0, 11, ms);
+        counterAnim("#count3", 0, 9, ms);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        if (isOnVisibleSpace(document.querySelector('.information')) === true) {count(1000);}
+        else {onVisibleSpaceListener('.information', el => {count(1000);})}
+    });
+
+
+</script>
 @endsection
