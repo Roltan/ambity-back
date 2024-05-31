@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c6a0abc9344edcf5e4575b9c9e20899",
+    "content-hash": "0f05dc493ebf88c59b8b9eac16f793fc",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5576,6 +5576,80 @@
             "time": "2024-04-18T09:32:20+00:00"
         },
         {
+            "name": "symfony/dotenv",
+            "version": "v6.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "982a8d58c73a7d91d229bc20493b8ae13208741c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/982a8d58c73a7d91d229bc20493b8ae13208741c",
+                "reference": "982a8d58c73a7d91d229bc20493b8ae13208741c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "conflict": {
+                "symfony/console": "<5.4",
+                "symfony/process": "<5.4"
+            },
+            "require-dev": {
+                "symfony/console": "^5.4|^6.0|^7.0",
+                "symfony/process": "^5.4|^6.0|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/v6.4.7"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-04-18T09:22:46+00:00"
+        },
+        {
             "name": "symfony/error-handler",
             "version": "v6.4.7",
             "source": {
@@ -7650,6 +7724,69 @@
                 }
             ],
             "time": "2024-04-18T09:22:46+00:00"
+        },
+        {
+            "name": "telegram-bot-php/core",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/telegram-bot-php/core.git",
+                "reference": "54119097853a21db174acad296498dcd8b76c64d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/telegram-bot-php/core/zipball/54119097853a21db174acad296498dcd8b76c64d",
+                "reference": "54119097853a21db174acad296498dcd8b76c64d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^7.8",
+                "php": ">=8.0",
+                "symfony/dotenv": "^v6.4"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.23",
+                "phpunit/phpunit": "^9.5",
+                "psr/log": "^1.1|^2.0|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TelegramBot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shahrad Elahi",
+                    "email": "shahrad@litehex.com"
+                },
+                {
+                    "name": "LiteHex",
+                    "email": "opensource@litehex.com"
+                }
+            ],
+            "description": "A PHP library that makes using Telegram Bot API much easier.",
+            "homepage": "https://github.com/telegram-bot-php/core",
+            "keywords": [
+                "bot",
+                "core",
+                "library",
+                "php",
+                "telegram",
+                "update-handler"
+            ],
+            "support": {
+                "issues": "https://github.com/telegram-bot-php/core/issues",
+                "source": "https://github.com/telegram-bot-php/core"
+            },
+            "time": "2024-05-17T14:33:39+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

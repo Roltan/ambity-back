@@ -150,13 +150,14 @@
                     <p>Оставьте заявку и наш менеджер свяжется с вами в кратчайшие сроки для уточнения подробностей проекта.</p>
                 </div>
                 <form>
+                    @csrf
                     <div class="d-flex align-items-center">
                         <input class="c-form__input" type="text" name="name" placeholder="Имя" required="">
                         <input class="c-form__input" type="text" name="phone" placeholder="Телефон" required="" inputmode="text">
                     </div>
                     <div class="d-flex align-items-center">
                         <input class="c-form__input" type="text" name="company" placeholder="Компания">
-                        <input class="c-form__input" type="text" name="mail-e" placeholder="E-mail">
+                        <input class="c-form__input" type="text" name="mail" placeholder="E-mail">
                     </div>
                     <textarea class="c-form__input" name="description" placeholder="Детали проекта"></textarea>
                     <div class="policy d-flex align-items-center">
@@ -258,7 +259,7 @@
                         document.querySelector('.modal .modal-con form button').setAttribute('disabled', 'disabled')
                         data.append('method','sendZayavka');
                         data.append('control','control');
-                        fetch('/sendmail.php', {
+                        fetch('/sendmail', {
                             'method': 'post',
                             'body': data,
                         })

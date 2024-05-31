@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('client_logos', function (Blueprint $table) {
             $table->id();
+            $table->boolean('vis')->default(true);
 
             $table->string('name')->unique();
+            $table->string('subheadings');
             $table->string('image');
-            $table->boolean('vis')->default(true);
 
             $table->timestamps();
         });

@@ -27,3 +27,5 @@ Route::get('/contacts', [Controller::class, 'GetContacts']);
 Route::get('/agency', [Controller::class, 'GetAgency']);
 Route::get('/products', [Controller::class, 'GetProducts']);
 Route::get('/blog', [Controller::class, 'GetBlog']);
+
+Route::post('/sendmail', [Controller::class, 'Sendmail']);

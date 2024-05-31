@@ -16,6 +16,7 @@ use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\RichEditor;
 
 class VacancyResource extends Resource
 {
@@ -30,13 +31,13 @@ class VacancyResource extends Resource
                 TextInput::make('name')
                     ->label('название')
                     ->required(),
-                TextInput::make('requirements')
+                RichEditor::make('requirements')
                     ->label('требования')
                     ->required(),
-                TextInput::make('duties')
+                RichEditor::make('duties')
                     ->label('обязанности')
                     ->required(),
-                TextInput::make('conditions')
+                RichEditor::make('conditions')
                     ->label('условия')
                     ->required(),
                 Checkbox::make('vis')

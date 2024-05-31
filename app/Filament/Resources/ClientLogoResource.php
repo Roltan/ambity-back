@@ -34,6 +34,9 @@ class ClientLogoResource extends Resource
                 TextInput::make('name')
                     ->required()
                     ->label('название'),
+                TextInput::make('subheadings')
+                    ->required()
+                    ->label('подзаголовок'),
                 FileUpload::make('images')
                     ->required()
                     ->label("картикнка"),

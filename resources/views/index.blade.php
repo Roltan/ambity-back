@@ -381,39 +381,38 @@ ambity
     {{-- кейсы --}}
     <div class="container">
         <h2>Кейсы</h2>
-        @foreach ($briefcase as $el)
-            <div class="examples-cards">
-                <div class="examples-cards-l d-flex flex-column">
-                    <div class="examples-card d-flex flex-column">
-                        <div class="examples-card-cont">
-                            <a class="text-decoration-none" href="/case/{{$el->url}}">
-                                <div class="examples-card-cont-circ">
-                                    <img src="/media/arrow-black-new.svg">
-                                </div>
-                            </a>
-                            <a class="text-decoration-none" href="/case/{{$el->url}}">
-                                <img class="examples-card-photo" src="{{$el->img}}">
-                            </a>
-                        </div>
-                        <div class="examples-card-texts d-flex flex-column">
-                            <a class="text-decoration-none" href="/case/{{$el->url}}">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="examples-card-name d-flex txt-anim"><h3>{{$el->name}}</h3><span>{{$el->name}}</span></div>
-                                    <img class="examples-card-arrow" src="/media/arrow-black-new.svg">
-                                </div>
-                                <p class="examples-card-desc">{{$el->description}}</p>
-                            </a>
-                        </div>
-                        <div class="examples-card-hov d-flex align-items-center">
-                            <div class="d-flex flex-column">
-                                <h3>{{$el->name}}</h3>
-                                <p>{{$el->description}}</p>
+        <div class="examples-cards">
+            <div class="examples-cards-l d-flex flex-column">
+                <div class="examples-card d-flex flex-column">
+                    <div class="examples-card-cont">
+                        <a class="text-decoration-none" href="/case/{{$briefcase->url}}">
+                            <div class="examples-card-cont-circ">
+                                <img src="/media/arrow-black-new.svg">
                             </div>
+                        </a>
+                        <a class="text-decoration-none" href="/case/{{$briefcase->url}}">
+                            <img class="examples-card-photo" src="{{$briefcase->img}}">
+                        </a>
+                    </div>
+                    <div class="examples-card-texts d-flex flex-column">
+                        <a class="text-decoration-none" href="/case/{{$briefcase->url}}">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="examples-card-name d-flex txt-anim"><h3>{{$briefcase->name}}</h3><span>{{$briefcase->name}}</span></div>
+                                <img class="examples-card-arrow" src="/media/arrow-black-new.svg">
+                            </div>
+                            <p class="examples-card-desc">{{$briefcase->description}}</p>
+                        </a>
+                    </div>
+                    <div class="examples-card-hov d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <h3>{{$briefcase->name}}</h3>
+                            <p>{{$briefcase->description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        @endforeach
+        </div>
+        <div class="examples-card d-flex flex-column"></div>
     </div>
 </section>
 
@@ -424,6 +423,16 @@ ambity
     </div>
     <div class="slider-marquee">
         <div>
+            <div>
+                @foreach ($client as $el)
+                    <div class="slider_item"><img src="{{$el->image}}" />
+                        <div class="slider_item-text">
+                            <h2>{{$el->name}}</h2>
+                            <p>{{$el->name}}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <div>
                 @foreach ($client as $el)
                     <div class="slider_item"><img src="{{$el->image}}" />

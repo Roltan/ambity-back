@@ -15,3 +15,5 @@ use App\Http\Controllers\Controller;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::post('/sendmail', [Controller::class, 'Sendmail']);

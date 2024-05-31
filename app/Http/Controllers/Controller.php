@@ -25,7 +25,7 @@ class Controller extends BaseController
         $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
 
-        return view('index', ['briefcase'=>[$briefcase[0], $briefcase[1]], 'client'=>$client, 'contact'=>$contact]);
+        return view('index', ['briefcase'=>$briefcase[0], 'client'=>$client, 'contact'=>$contact]);
     }
 
     public function GetCases() {
@@ -88,5 +88,76 @@ class Controller extends BaseController
     public function GetBlog(){
         $contact = Contact::first();
         return view('blog', ['contact'=>$contact]);
+    }
+
+    public function Sendmail(Request $request){
+        $name = $request->name;
+        $phone = $request->phone;
+        $company = isset($request->company) ? $request->company : " ";
+        $email = isset($request->mail) ? $request->mail : " ";
+        $description = isset($request->description) ? $request->description : " ";
+        $queryUrl = 'https://ambity.bitrix24.ru/rest/1/5z7jpqb4wtf012ll/crm.lead.add.json';
+
+        //данные для битрикса Начало
+        $result = Http::post($queryUrl, [
+            'fields' => [
+                'TITLE' => 'Отклик на сайте Ambity',
+                'EMAIL' => [
+                    "n0" => [
+                        "VALUE" => $email,
+                        "VALUE_TYPE" => "WORK",
+                    ],
+                ],
+                'PHONE' => [
+                    "n0" => [
+                        "VALUE" => $phone,
+                        "VALUE_TYPE" => "WORK",
+                    ],
+                ],
+                'UF_CRM_1667412355' => $company,
+                'SOURCE_ID' => 'WEB',
+                'UF_CRM_1667412400' => $name,
+                'UF_CRM_1667412433' => $description,
+
+            ],
+            'params' => ["REGISTER_SONET_EVENT" => "Y"]
+        ]);
+        $result = json_decode($result, 1);
+        //данные для битрикса Конец
+
+        //данные для отправки на почту Начало
+        $to = 'info@ambity.ru';
+        $subject = '=?utf-8?b?'. base64_encode('Новая заявка на сайте Амбити') .'?=';
+        $fromMail = 'info@ambity.ru';
+        $fromName = 'info';
+        $date = date(DATE_RFC2822);
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= "Content-type: text/html; charset=utf-8". "\r\n";
+        $headers .= "From: ". $fromName ." <". $fromMail ."> \r\n";
+        $headers .= "Date: ". $date ." \r\n";
+        $message ='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+            <html><head></head>
+            <body>Имя:'.$name.'<br/>
+            Телефон: <a href="tel:'.$phone.'">'.$phone.'</a><br/>';
+        isset($request->company) ? $message.='Компания: '.$company.'<br/>' : false;
+        isset($request->mail) ? $message.='Email: <a href="mailto:'.$email.'">'.$email.'</a><br/>' : false;
+        isset($request->description) ? $message.='Детали проекта: '.$description : false;
+        $message.='</body>';
+        //данные для отправки на почту Конец
+
+        if(mail(
+            $to,//получатель
+            $subject,//Тема письма
+            $message,
+            $headers
+        )){
+            if (array_key_exists('error', $result)){
+                echo "Ошибка при сохранении лида: ".$result['error_description'];
+            }else{
+                echo json_encode('ok');
+            }
+        }else{
+            echo json_encode('error');
+        }
     }
 }

@@ -18,6 +18,7 @@ class ClientLogoFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'subheadings' => $this->faker->name(),
             'image' => $this->faker->imageUrl(),
         ];
     }
