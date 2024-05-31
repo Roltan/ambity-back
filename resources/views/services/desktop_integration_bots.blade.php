@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('../pattern/desktop')
 
 @section('title')
 ambity
@@ -7,7 +7,7 @@ ambity
 @section('mainContent')
 <section class="main-title d-flex align-items-center justify-content-between container">
     <div class="text col-7">
-        <h1>Поддержка<br/>
+        <h1>Интеграции и чат-боты<br/>
             DIGITAL</h1>
         <p>WEB-разработка. Интернет-маркетинг. Интеграции и чат-боты.
             Корпоративные системы. Брендинг. Дизайн. Продакшн.
@@ -34,7 +34,7 @@ ambity
             <p class="services-el-props">Стратегия, Контекстная реклама, Таргетированная реклама, SMM, SEO, Рассылки,
                 Управление репутацией(SERM), Маркетплейсы, Контент-Маркетинг, Ретаргетинг</p>
         </a>
-        <a href="/services/integration_bots" class="services-el">
+        <a href="/services/integration-bots" class="services-el">
             <div class="d-flex align-items-center"><h3>Интеграции и чат-боты </h3> <img src="/media/IconForward.svg"></div>
             <p class="services-el-desc">Автоматизируем бизнес-процессы, общение в мессенджерах и организуем синхронизацию данных между системами клиента.</p>
             <p class="services-el-props">Интернет-эквайринг, Чат-боты, Веб-сервисы, Синхронизация с сервисами, Интеграция с CRM-системами, API, IIKO, FrontPad, 1C</p>

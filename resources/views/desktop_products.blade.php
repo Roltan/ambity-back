@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('/pattern/desktop')
 
 @section('title')
 ambity

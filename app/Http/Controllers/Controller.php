@@ -15,6 +15,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\Console\Input\Input;
+use Jenssegers\Agent\Agent;
 
 class Controller extends BaseController
 {
@@ -25,21 +26,34 @@ class Controller extends BaseController
         $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
 
-        return view('index', ['briefcase'=>$briefcase[0], 'client'=>$client, 'contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_index', ['briefcase'=>$briefcase[0], 'client'=>$client, 'contact'=>$contact]);
+        }
+        return view('desktop_index', ['briefcase'=>$briefcase[0], 'client'=>$client, 'contact'=>$contact]);
     }
 
     public function GetCases() {
         $briefcase = Briefcase::where('vis', true)->get();
         $contact = Contact::first();
 
-        return view('cases', ['briefcase'=>[$briefcase[0], $briefcase[1]], 'contact'=>$contact]);
+        $agent = new Agent();
+        if($agent->ismobail() == true){return 
+            view('desktop_cases', ['briefcase'=>$briefcase, 'contact'=>$contact]);
+        }
+        return view('desktop_cases', ['briefcase'=>$briefcase, 'contact'=>$contact]);
     }
 
     public function GetCase($urlCase) {
         $briefcase = Briefcase::where('vis', true)->where('url', $urlCase)->first();
         $contact = Contact::first();
 
-        return view('case', ['briefcase'=>$briefcase, 'contact'=>$contact]);
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_case', ['briefcase'=>$briefcase, 'contact'=>$contact]);
+        }
+        return view('desktop_case', ['briefcase'=>$briefcase, 'contact'=>$contact]);
     }
 
     public function GetVacancy() {
@@ -52,42 +66,81 @@ class Controller extends BaseController
             $el->conditions = explode('.', $el->conditions);
         }
 
-        return view('vacancy', ['vacancy'=>$vacancy, 'contact'=>$contact]);
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_vacancy', ['vacancy'=>$vacancy, 'contact'=>$contact]);
+        }
+        return view('desktop_vacancy', ['vacancy'=>$vacancy, 'contact'=>$contact]);
     }
 
     public function GetService($service){
         $contact = Contact::first();
-        return view($service, ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('services/mobail_'.$service, ['contact'=>$contact]);
+        }
+        return view('services/desktop_'.$service, ['contact'=>$contact]);
     }
 
     public function GetServices(){
         $contact = Contact::first();
-        return view('services', ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_services', ['contact'=>$contact]);
+        }
+        return view('desktop_services', ['contact'=>$contact]);
     }
 
     public function GetCareer(){
         $contact = Contact::first();
-        return view('career', ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_career', ['contact'=>$contact]);
+        }
+        return view('desktop_career', ['contact'=>$contact]);
     }
     public function GetContacts(){
         $contact = Contact::first();
-        return view('contacts', ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_contacts', ['contact'=>$contact]);
+        }
+        return view('desktop_contacts', ['contact'=>$contact]);
     }
 
     public function GetAgency(){
         $client = ClientLogo::where('vis', true)->get();
         $contact = Contact::first();
-        return view('agency', ['contact'=>$contact, 'client'=>$client]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_agency', ['contact'=>$contact, 'client'=>$client]);
+        }
+        return view('desktop_agency', ['contact'=>$contact, 'client'=>$client]);
     }
 
     public function GetProducts(){
         $contact = Contact::first();
-        return view('products', ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_products', ['contact'=>$contact]);
+        }
+        return view('desktop_products', ['contact'=>$contact]);
     }
 
     public function GetBlog(){
         $contact = Contact::first();
-        return view('blog', ['contact'=>$contact]);
+
+        $agent = new Agent();
+        if($agent->ismobail() == true){
+            return view('mobail_blog', ['contact'=>$contact]);
+        }
+        return view('desktop_blog', ['contact'=>$contact]);
     }
 
     public function Sendmail(Request $request){

@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('../pattern/desktop')
 
 @section('title')
 ambity
@@ -7,7 +7,7 @@ ambity
 @section('mainContent')
 <section class="main-title d-flex align-items-center justify-content-between container">
     <div class="text col-7">
-        <h1>Корпоративные системы</h1>
+        <h1>Мобильный</h1>
         <p>WEB-разработка. Интернет-маркетинг. Интеграции и чат-боты.
             Корпоративные системы. Брендинг. Дизайн. Продакшн.
             Мобильные приложения. Аналитика. Поддержка.</p>

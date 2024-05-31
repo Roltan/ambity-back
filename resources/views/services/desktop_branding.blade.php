@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('../pattern/desktop')
 
 @section('title')
 ambity
@@ -7,7 +7,8 @@ ambity
 @section('mainContent')
 <section class="main-title d-flex align-items-center justify-content-between container">
     <div class="text col-7">
-        <h1>Мобильный</h1>
+        <h1>Брендинг<br/>
+            DIGITAL</h1>
         <p>WEB-разработка. Интернет-маркетинг. Интеграции и чат-боты.
             Корпоративные системы. Брендинг. Дизайн. Продакшн.
             Мобильные приложения. Аналитика. Поддержка.</p>
@@ -38,7 +39,7 @@ ambity
             <p class="services-el-desc">Автоматизируем бизнес-процессы, общение в мессенджерах и организуем синхронизацию данных между системами клиента.</p>
             <p class="services-el-props">Интернет-эквайринг, Чат-боты, Веб-сервисы, Синхронизация с сервисами, Интеграция с CRM-системами, API, IIKO, FrontPad, 1C</p>
         </a>
-        <a href="/services/corp-systems" class="services-el">
+        <a href="/services/corp_systems" class="services-el">
             <div class="d-flex align-items-center"><h3>Корпоративные системы </h3> <img src="/media/IconForward.svg"></div>
             <p class="services-el-desc">Проводим анализ бизнес-процессов и оптимизируем. Повышаем эффективность. Сокращаем затраты всех ресурсов компании через автоматизацию бизнес-процессов и внедрение CRM, ERP и BI-систем.</p>
             <p class="services-el-props">Внедрение CRM, ERP и BI-систем, Настройка IP-телефонии, Корпоративные порталы

@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('/pattern/desktop')
 
 @section('title')
 ambity
@@ -428,7 +428,7 @@ ambity
                     <div class="slider_item"><img src="{{$el->image}}" />
                         <div class="slider_item-text">
                             <h2>{{$el->name}}</h2>
-                            <p>{{$el->name}}</p>
+                            <p>{{$el->requirements}}</p>
                         </div>
                     </div>
                 @endforeach
@@ -438,7 +438,7 @@ ambity
                     <div class="slider_item"><img src="{{$el->image}}" />
                         <div class="slider_item-text">
                             <h2>{{$el->name}}</h2>
-                            <p>{{$el->name}}</p>
+                            <p>{{$el->requirements}}</p>
                         </div>
                     </div>
                 @endforeach

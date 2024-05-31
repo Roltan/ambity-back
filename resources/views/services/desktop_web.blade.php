@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('../pattern/desktop')
 
 @section('title')
 ambity
@@ -111,56 +111,20 @@ ambity
     <div class="slider-marquee">
         <div>
             <div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
+                @foreach ($client as $el)
+                    <div class="slider_item"><img src="{{$el->image}}">
+                        <h2>{{$el->name}}</h2>
+                        <p>{{$el->requirements}}</p>
+                    </div>
+                @endforeach
             </div>
             <div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
-                <div class="slider_item"><img src="https://i.postimg.cc/X7cgW1Zr/img.png" />
-                    <h2>Тренд</h2>
-                    <p>Ресторанная группа</p>
-                </div>
+                @foreach ($client as $el)
+                    <div class="slider_item"><img src="{{$el->image}}">
+                        <h2>{{$el->name}}</h2>
+                        <p>{{$el->requirements}}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

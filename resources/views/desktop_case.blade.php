@@ -1,4 +1,4 @@
-@extends('desktop')
+@extends('/pattern/desktop')
 
 @section('title')
     {{$briefcase->seo_title}}
