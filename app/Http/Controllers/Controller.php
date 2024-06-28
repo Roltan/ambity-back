@@ -151,7 +151,7 @@ class Controller extends BaseController
         $description = isset($request->description) ? $request->description : " ";
         $queryUrl = 'https://ambity.bitrix24.ru/rest/1/5z7jpqb4wtf012ll/crm.lead.add.json';
 
-        //данные для битрикса Начало
+        //данные для битрикса Началоgawjh dhagwvdybh
         $result = Http::post($queryUrl, [
             'fields' => [
                 'TITLE' => 'Отклик на сайте Ambity',
