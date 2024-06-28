@@ -19,13 +19,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\Briefcase::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         Briefcase::factory(10)->create();
         Tag::factory(5)->create();
         BriefcasesTagCon::factory(10)->create();

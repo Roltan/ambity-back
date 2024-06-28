@@ -37,7 +37,7 @@ class BriefcaseResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->label('имя')
+                    ->label('название')
                     ->required(),
                 TextInput::make('seo_title'),
                 TextInput::make('og_title'),
@@ -54,7 +54,7 @@ class BriefcaseResource extends Resource
                 FileUpload::make('img')
                     ->required()
                     ->image()
-                    ->label('кортинка на превью'),
+                    ->label('картинка на превью'),
                 FileUpload::make('video'),
                 FileUpload::make('seo_image')
                     ->image(),
